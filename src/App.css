@@ -15,12 +15,13 @@ main {
   height: 85vh;
   width: 100vw;
 }
-main div:first-of-type {
+main > div:first-of-type {
   padding-bottom: 4rem;
 }
 main .card-wrapper {
   height: 200px;
   position: relative;
+  padding-bottom: 1rem;
 }
 svg {
   width: 30px;
@@ -37,6 +38,7 @@ main p {
   display: inline-block;
   overflow-x: scroll;
   max-width: 100%;
+  height: 200px;
   text-align: center;
   font-size: 1.2rem;
   text-align: justify;
@@ -45,8 +47,18 @@ main textarea {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 30%;
+  height: 40%;
 }
+.questionCountCircle {
+  width: 16px;
+  height: 16px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+.filled.questionCountCircle {
+  background: #fff;
+}
+
 .minimal-select {
   border: 1px solid #ccc;
   border-radius: 4px;
