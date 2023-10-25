@@ -58,6 +58,7 @@ main textarea {
 .filled.questionCountCircle {
   background: #fff;
 }
+.filled.questionCountCircle
 
 .minimal-select {
   border: 1px solid #ccc;
@@ -185,4 +186,11 @@ main textarea {
 
 .input:checked + .slider:before {
   transform: translateX(30px);
+}
+
+@media (prefers-color-scheme: light) {
+  /* Your CSS styles for light color scheme here */
+  .filled.questionCountCircle {
+    background-color: #000;
+  }
 }
