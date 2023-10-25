@@ -16,12 +16,10 @@ function App() {
 
   useEffect(() => {
     const notes = localStorage.getItem('notes');
-    if (notes && typeof notes === 'string') {
+    if (notes) {
       setNotes(notes);
-    } else {
-      return;
     }
-  }, [])
+  }, []);
 
   const changeTheme = () => {
     setIsDark(isDark => !isDark);
@@ -29,12 +27,7 @@ function App() {
     document.documentElement.style.setProperty('--bead-color', `${isDark ? '#fff' : '#000'}`);
   };
 
-  // function updateNotes() {
-  //   return null;
-  // }
-
   function decreaseQuestionNumber() {
-    console.log(questionNumber);
     if (questionNumber === 0) {
       setQuestionNumber(questions.length - 1);
       return;
@@ -43,23 +36,22 @@ function App() {
   }
 
   function increaseQuestionNumber() {
-    console.log(questionNumber);
     if (questionNumber === questions.length - 1) {
       setQuestionNumber(0);
       return;
     }
     setQuestionNumber(currQuestionNum => currQuestionNum + 1);
   }
-  const questionCountCircles = questions.map((_, i) => <div id={`${i}`} className={ i === questionNumber ? 'filled questionCountCircle' : 'questionCountCircle'}></div>)
+  const questionCountCircles = questions.map((_, i) => <div key={i} id={`${i}`} className={ i === questionNumber ? 'filled questionCountCircle' : 'questionCountCircle'}></div>)
   return (
     <>
     <header>
-      <select className='minimal-select' onInput={(e) => {
+      <select defaultValue={'hun'} className='minimal-select' onInput={(e) => {
         const value: string = e.currentTarget.value;
         setLanguage(value)
         }} name="language" id="language">
         <option value="eng">English</option>
-        <option selected value="hun">Magyar</option>
+        <option value="hun">Magyar</option>
       </select>      
 
       <label className="switch">
@@ -83,7 +75,7 @@ function App() {
           <svg className='right' onClick={increaseQuestionNumber} style={{transform: 'rotate(180deg)'}} xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24"><path fill="currentColor" d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875L3.55 12Z"/></svg>
       </div>
         <div className='flex-center' style={{gap: '6px'}}>{questionCountCircles}</div>
-      <textarea value={notes} onInput={(e) => setNotes(e.currentTarget.value)} placeholder='Your notes...' name="notes" id="notes"></textarea>
+      <textarea value={notes} onInput={(e) => setNotes(e.currentTarget.value)}  name="notes" id="notes"></textarea>
     </main>
     <footer>
 
