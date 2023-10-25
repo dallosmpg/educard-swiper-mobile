@@ -35,7 +35,7 @@ function App() {
     }
     setQuestionNumber(currQuestionNum => currQuestionNum + 1);
   }
-  const questionCountCircles = questions.map((question, i) => <div id={`${i}`} className={ i === questionNumber ? 'filled questionCountCircle' : 'questionCountCircle'}></div>)
+  const questionCountCircles = questions.map((_, i) => <div id={`${i}`} className={ i === questionNumber ? 'filled questionCountCircle' : 'questionCountCircle'}></div>)
   return (
     <>
     <header>
