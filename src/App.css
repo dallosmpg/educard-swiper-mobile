@@ -19,7 +19,7 @@ main > div:first-of-type {
   padding-bottom: 4rem;
 }
 main .card-wrapper {
-  height: 200px;
+  height: 150px;
   position: relative;
   padding-bottom: 1rem;
 }
@@ -38,7 +38,7 @@ main p {
   display: inline-block;
   overflow-x: scroll;
   max-width: 100%;
-  height: 200px;
+  height: 150px;
   text-align: center;
   font-size: 1.2rem;
   text-align: justify;
@@ -48,6 +48,8 @@ main textarea {
   bottom: 0;
   width: 100%;
   height: 40%;
+  padding: .5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .questionCountCircle {
   width: 16px;
