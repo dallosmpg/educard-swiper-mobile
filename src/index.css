@@ -1,5 +1,6 @@
 :root {
   --color-scheme: dark;
+  --bead-color: #fff;
 }
 html {
   color-scheme: var(--color-scheme);

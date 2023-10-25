@@ -56,7 +56,7 @@ main textarea {
   border-radius: 50%;
 }
 .filled.questionCountCircle {
-  background: #fff;
+  background: var(--bead-color);
 }
 .filled.questionCountCircle
 

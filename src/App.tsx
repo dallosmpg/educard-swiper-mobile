@@ -12,6 +12,7 @@ function App() {
   const changeTheme = () => {
     setIsDark(isDark => !isDark);
     document.documentElement.style.setProperty('--color-scheme', `${isDark ? 'dark' : 'light'}`);
+    document.documentElement.style.setProperty('--bead-color', `${isDark ? '#fff' : '#000'}`);
   };
 
   // function updateNotes() {
